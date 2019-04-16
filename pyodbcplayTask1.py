@@ -1,4 +1,7 @@
-# PURPOSE: Makes a connection to an instance of InterSystems IRIS Data Platform
+"""
+PURPOSE: Makes a connection to an instance of InterSystems IRIS Data Platform
+"""
+
 
 import pyodbc
 
@@ -41,4 +44,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-

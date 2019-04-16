@@ -1,9 +1,11 @@
-# PURPOSE: View top 10 stocks.
-#
-# NOTES: When running the application, choose option 1 and try 2016-08-12.
+"""
+PURPOSE: View top 10 stocks.
 
-import pyodbc
+NOTES: When running the application, choose option 1 and try 2016-08-12.
+"""
+
 from datetime import datetime
+import pyodbc
 
 
 # Find top 10 stocks on a particular date
@@ -98,4 +100,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-

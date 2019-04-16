@@ -1,14 +1,16 @@
-# PURPOSE: Store stock data directly to InterSystems IRIS Data Platform using a custom structure and generate trade data
-#   with methods from InterSystems IRIS.
-#
-# NOTES: When running,
-# 1. Choose option 2 to store stock data natively.
-# 2. Choose option 3 to retrieve stock data natively.
-# 3. Choose option 4 to generate trades with random data using methods from InterSystems IRIS.
+"""
+PURPOSE: Store stock data directly to InterSystems IRIS Data Platform using a custom structure
+and generate trade data with methods from InterSystems IRIS.
 
-import irisnative
+NOTES: When running,
+1. Choose option 2 to store stock data natively.
+2. Choose option 3 to retrieve stock data natively.
+3. Choose option 4 to generate trades with random data using methods from InterSystems IRIS.
+"""
+
 from time import time
 from random import randint
+import irisnative
 
 
 # Write to a test global
@@ -60,13 +62,16 @@ def print_nodes(iris_native):
 # Generate the list of trades
 def generate_data(iris_native, object_count):
     # Loop through list of trade to generate data for each trade
-    for i in range(object_count):
+    for _ in range(object_count):
         temp_date = "2018-01-01"
         temp_amount = iris_native.classMethodValue("%PopulateUtils", "Currency")
-        temp_name = iris_native.classMethodValue("%PopulateUtils", "String") + iris_native.classMethodValue("%PopulateUtils", "String") + iris_native.classMethodValue("%PopulateUtils", "String")
+        temp_name = iris_native.classMethodValue("%PopulateUtils", "String") + \
+                    iris_native.classMethodValue("%PopulateUtils", "String") + \
+                    iris_native.classMethodValue("%PopulateUtils", "String")
         temp_trader = iris_native.classMethodValue("%PopulateUtils", "Name")
         temp_shares = randint(1, 10)
-        print("New trade: {}, {}, {}, {}, {}".format(temp_name, temp_date, temp_amount, temp_shares, temp_trader))
+        print("New trade: {}, {}, {}, {}, {}"
+              .format(temp_name, temp_date, temp_amount, temp_shares, temp_trader))
 
 
 # Execute task based on user input

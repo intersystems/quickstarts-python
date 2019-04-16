@@ -1,9 +1,11 @@
-# PURPOSE: Store stock data directly to InterSystems IRIS Data Platform using a custom structure.
-#
-# NOTES: When running, choose option 2 to store stock data natively.
+"""
+PURPOSE: Store stock data directly to InterSystems IRIS Data Platform using a custom structure.
 
-import irisnative
+NOTES: When running, choose option 2 to store stock data natively.
+"""
+
 from time import time
+import irisnative
 
 
 # Write to a test global

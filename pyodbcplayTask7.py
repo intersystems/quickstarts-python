@@ -1,13 +1,15 @@
+"""
+PURPOSE: Simulate adding stocks to your stock portfolio and see how you would have done.
 
-# PURPOSE: Simulate adding stocks to your stock portfolio and see how you would have done.
-#
-# NOTES: When running the application,
-# 1. Choose option 1 to view top 10 stocks.
-# 2. Choose option 3 to add 2 or 3 stocks to your portfolio (using names from top 10 and 2016-08-12).
-# 3. Choose option 6 using date 2017-08-10 to view your % Gain or Loss after a year.
+NOTES: When running the application,
+1. Choose option 1 to view top 10 stocks.
+2. Choose option 3 to add 2 or 3 stocks to your portfolio (using names from top 10 and 2016-08-12).
+3. Choose option 6 using date 2017-08-10 to view your % Gain or Loss after a year.
+"""
 
-import pyodbc
+
 from datetime import datetime
+import pyodbc
 
 
 # Find top 10 stocks on a particular date
@@ -78,7 +80,7 @@ def delete_portfolio_table(connection, name):
     else:
         print("{} does not exist.".format(name))
     connection.commit()
-    
+
 
 # View your portfolio to know % Gain or Loss
 def view_portfolio_table(connection, trans_date):
@@ -98,8 +100,9 @@ def view_portfolio_table(connection, trans_date):
         start_value = purchase_price * shares
         end_value = stock_close * shares
         gain_or_loss = round(end_value - start_value, 2)
-        print("{}\t{}\t{}\t\t{}\t{}\t{}\t{}\t{}".format(name, purchase_date, purchase_price, stock_close, shares,
-                                                        current_time, percent_change, gain_or_loss))
+        print("{}\t{}\t{}\t\t{}\t{}\t{}\t{}\t{}"
+              .format(name, purchase_date, purchase_price, stock_close,
+                      shares, current_time, percent_change, gain_or_loss))
 
 
 # Task 2: View top 10 stocks for selected date
@@ -224,4 +227,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-

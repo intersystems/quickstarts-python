@@ -1,13 +1,15 @@
-# PURPOSE: Delete a portfolio item.
-#
-# NOTES: When running,
-# 1. Choose option 1 to see list of stocks.
-# 2. Choose option 2 to create portfolio table.
-# 3. Choose option 3 and add stocks using names from the previous list of stocks.
-# 4. Choose option 5 to delete a portfolio item.
+"""
+PURPOSE: Delete a portfolio item.
 
-import pyodbc
+NOTES: When running,
+1. Choose option 1 to see list of stocks.
+2. Choose option 2 to create portfolio table.
+3. Choose option 3 and add stocks using names from the previous list of stocks.
+4. Choose option 5 to delete a portfolio item.
+"""
+
 from datetime import datetime
+import pyodbc
 
 
 # Find top 10 stocks on a particular date
@@ -193,4 +195,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-

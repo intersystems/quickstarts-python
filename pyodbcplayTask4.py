@@ -1,12 +1,14 @@
-# PURPOSE: Add several portfolio items.
-#
-# NOTES: When running,
-# 1. Choose option 1 to see list of stocks.
-# 2. Choose option 2 to create portfolio.
-# 3. Choose option 3 and add stocks using names from the previous list of stocks
+"""
+PURPOSE: Add several portfolio items.
 
-import pyodbc
+NOTES: When running,
+1. Choose option 1 to see list of stocks.
+2. Choose option 2 to create portfolio.
+3. Choose option 3 and add stocks using names from the previous list of stocks
+"""
+
 from datetime import datetime
+import pyodbc
 
 
 # Find top 10 stocks on a particular date
@@ -147,4 +149,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-

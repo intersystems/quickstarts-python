@@ -1,10 +1,13 @@
-# PURPOSE: Create the portfolio table in InterSystems IRIS Data Platform to store your personal stock portfolio information
-#
-# NOTES: When running, choose option 2 to create the Portfolio table.
+"""
+PURPOSE: Create the portfolio table in InterSystems IRIS Data Platform
+to store your personal stock portfolio information
+
+NOTES: When running, choose option 2 to create the Portfolio table.
+"""
 
 
-import pyodbc
 from datetime import datetime
+import pyodbc
 
 
 # Find top 10 stocks on a particular date
@@ -118,4 +121,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-

@@ -1,6 +1,9 @@
-# PURPOSE: Store test data directly to InterSystems IRIS Data Platform.
-#
-# NOTES: When running, choose option 1 to store and retrieve test data. The test global should be 8888.
+"""
+PURPOSE: Store test data directly to InterSystems IRIS Data Platform.
+
+NOTES: When running, choose option 1 to store and retrieve test data.
+The test global should be 8888.
+"""
 
 import irisnative
 
@@ -80,4 +83,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-
