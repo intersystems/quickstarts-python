@@ -10,7 +10,7 @@
 4. Run `pip install --upgrade --global-option=build_ext --global-option="-I/usr/local/include" --global-option="-L/usr/local/lib" --allow-external pyodbc --allow-unverified pyodbc pyodbc`
 
 
-###Install pyodbc for Linux
+## Install pyodbc for Linux
 
 1. Run `apt-get update`
 2. Run `apt-cache search iodbc`
