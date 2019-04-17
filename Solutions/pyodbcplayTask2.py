@@ -1,10 +1,8 @@
 """
-PURPOSE: Create the portfolio table in InterSystems IRIS Data Platform
-to store your personal stock portfolio information
+PURPOSE: View top 10 stocks.
 
-NOTES: When running, choose option 2 to create the Portfolio table.
+NOTES: When running the application, choose option 1 and try 2016-08-12.
 """
-
 
 from datetime import datetime
 import pyodbc
@@ -21,41 +19,22 @@ def find_top_on_date(connection, date):
     for row in rows:
         for item in row:
             print("{}\t".format(item), end='')
-        print
-
-
-# Create portfolio table
-def create_portfolio_table(connection):
-    cursor = connection.cursor()
-    create_table = "CREATE TABLE Demo.Portfolio(Name varchar(50) unique, PurchaseDate date, " \
-                   "PurchasePrice numeric(10,4), Shares int, DateTimeUpdated datetime)"
-    try:
-        cursor.execute(create_table)
-        print("Created Demo.Portfolio table successfully.")
-        connection.commit()
-    except Exception as e:
-        print("Error creating portfolio: " + str(e))
+        print("")
 
 
 # Task 2: View top 10 stocks for selected date
 # Note: Choose 2016/08/12 for date
-def task2(connection):
+def task_view_top10_stock(connection):
     date = input("On which date? (YYYY-MM-DD) ")
     find_top_on_date(connection, date)
-
-
-# Task 3: Create Portfolio Table
-def task3(connection):
-    print("Creating portfolio ...")
-    create_portfolio_table(connection)
 
 
 # Execute task based on user input
 def execute_selection(selection, connection):
     if selection == 1:
-        task2(connection)
+        task_view_top10_stock(connection)
     elif selection == 2:
-        task3(connection)
+        print("TO DO: Create Portfolio")
     elif selection == 3:
         print("TO DO: Add to Portfolio")
     elif selection == 4:
