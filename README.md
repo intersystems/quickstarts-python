@@ -46,7 +46,7 @@ Before installing, make sure you are in **Solutions** directory of your terminal
 
 ### Set up the Native API for Windows:
 
-* Run `pip install nativeAPI_wheel/irisnative-1.0.0-cp36-cp36m-win_amd64.whl`
+* Run `pip install nativeAPI_wheel\irisnative-1.0.0-cp36-cp36m-win_amd64.whl`
 
 ### Set up the Native API for Mac:
 

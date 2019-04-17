@@ -1,11 +1,13 @@
 """
 PURPOSE: Store stock data directly to InterSystems IRIS Data Platform using a custom structure
-and generate trade data with methods from InterSystems IRIS.
+and generate trade data with methods from InterSystems IRIS
+as well as call routine to print the version of InterSystems IRIS.
 
 NOTES: When running,
 1. Choose option 2 to store stock data natively.
 2. Choose option 3 to retrieve stock data natively.
 3. Choose option 4 to generate trades with random data using methods from InterSystems IRIS.
+4. Choose option 5 to call InterSystems IRIS routine directly.
 """
 
 from time import time
