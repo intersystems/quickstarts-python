@@ -5,7 +5,7 @@ Note that our code and supporting wheel files are designed for Python 3 because 
 
 ## Contents
 * `pyodbcplayTask7.py`: to see how to store and retrieve data relationally
-* `nativeplayTask4.py`: to see how to run methods within InterSystems IRIS
+* `nativeplayTask5.py`: to see how to access directly the underlying structure within InterSystems IRIS
 
 ## Configuration files
 `connections.config`: contains connection details for PyODBC, and Native API.
@@ -57,7 +57,7 @@ Before installing, make sure you are in **Solutions** directory of your terminal
 * Run `pip install nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl`
 
 
-### Having trouble installing InterSystems wheel for PyODBC and Native API?
+## Having trouble installing InterSystems wheel for PyODBC and Native API?
 
 * Our written code and supporting wheel files are designed for Python 3 because Python 2 will retire in 2020. If you want to use Python 2, please contact us for more details.
 * Depending on the version of Mac OSX that you are using, you may have to change the filename to get the wheel file for the IRIS Native API to be installed. For example, if you are using Mac version 10.12, rename `irisnative-1.0.0-cp34-abi3-macosx_10_13_x86_64.macosx_10_14_x86_64.whl` to `irisnative-1.0.0-cp34-abi3-macosx_10_12_x86_64.macosx_10_14_x86_64.whl`
