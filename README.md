@@ -4,8 +4,8 @@ Note that our code and supporting wheel files are designed for Python 3 because 
 
 
 ## Contents
-* `pyodbcplayTask7.py`: to see how to store and retrieve data relationally
-* `nativeplayTask5.py`: to see how to access directly the underlying structure within InterSystems IRIS
+* `pyodbcplaystocksTask7.py`: to see how to store and retrieve data relationally
+* `nativeplaystocksTask5.py`: to see how to access directly the underlying structure within InterSystems IRIS
 
 ## Configuration files
 `connections.config`: contains connection details for PyODBC, and Native API.

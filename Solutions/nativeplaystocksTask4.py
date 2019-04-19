@@ -1,10 +1,15 @@
 """
-PURPOSE: Store stock data directly to InterSystems IRIS Data Platform using a custom structure.
+PURPOSE: Store stock data directly to InterSystems IRIS Data Platform using a custom structure
+and generate trade data with methods from InterSystems IRIS.
 
-NOTES: When running, choose option 2 to store stock data natively.
+NOTES: When running,
+1. Choose option 2 to store stock data natively.
+2. Choose option 3 to retrieve stock data natively.
+3. Choose option 4 to generate trades with random data using methods from InterSystems IRIS.
 """
 
 from time import time
+from random import randint
 import irisnative
 
 
@@ -34,13 +39,39 @@ def store_stock_data(iris_native):
     start = int(time() * 1000)
 
     # Loop through list of stock and write global
-    for i in range(len(list_stock)):
-        iris_native.set(list_stock[i], "^nyse", i + 1)
+    for i in range(1, len(list_stock)):
+        iris_native.set(list_stock[i], "^nyse", i)
 
     # Get time consuming
     end = int(time() * 1000)
     time_consume = end - start
     print("Stored natively successfully. Execution time: {} ms".format(time_consume))
+
+
+# Iterate over all nodes forwards and print
+def print_nodes(iris_native):
+    # Create iter
+    subscript_iter = iris_native.iterator("^nyse")
+    print("walk forwards")
+
+    # Iterate over all nodes forwards
+    for subscript, value in subscript_iter:
+        print("subscript = {}, value = {}".format(subscript, value))
+
+
+# Generate the list of trades
+def generate_data(iris_native, object_count):
+    # Loop through list of trade to generate data for each trade
+    for _ in range(object_count):
+        temp_date = "2018-01-01"
+        temp_amount = iris_native.classMethodValue("%PopulateUtils", "Currency")
+        temp_name = iris_native.classMethodValue("%PopulateUtils", "String") + \
+                    iris_native.classMethodValue("%PopulateUtils", "String") + \
+                    iris_native.classMethodValue("%PopulateUtils", "String")
+        temp_trader = iris_native.classMethodValue("%PopulateUtils", "Name")
+        temp_shares = randint(1, 10)
+        print("New trade: {}, {}, {}, {}, {}"
+              .format(temp_name, temp_date, temp_amount, temp_shares, temp_trader))
 
 
 # Execute task based on user input
@@ -50,9 +81,11 @@ def execute_selection(selection, iris_native):
     elif selection == 2:
         store_stock_data(iris_native)
     elif selection == 3:
-        print("TO DO: View stock data")
+        print_nodes(iris_native)
     elif selection == 4:
-        print("TO DO: Generate trades")
+        generate_data(iris_native, 10)
+    elif selection == 5:
+        print("TO DO: Call routines")
 
 
 # Get connection details from config file
@@ -85,6 +118,7 @@ def run():
 
     # Create connection to InterSystems IRIS
     connection = irisnative.createConnection(ip, port, namespace, username, password)
+
     print("Connect to InterSystem IRIS")
 
     # Create IRIS Native object
@@ -96,9 +130,10 @@ def run():
         print("2. Store stock data")
         print("3. View stock data")
         print("4. Generate Trades")
-        print("5. Quit")
+        print("5. Call routines")
+        print("6. Quit")
         selection = int(input("What would you like to do? "))
-        if selection == 5:
+        if selection == 6:
             break
         elif selection not in range(1, 6):
             print("Invalid option. Try again!")
@@ -108,3 +143,4 @@ def run():
 
 if __name__ == '__main__':
     run()
+

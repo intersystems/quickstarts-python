@@ -71,11 +71,12 @@ def run():
         print("2. Store stock data")
         print("3. View stock data")
         print("4. Generate Trades")
-        print("5. Quit")
+        print("5. Call routines")
+        print("6. Quit")
         selection = int(input("What would you like to do? "))
-        if selection == 5:
+        if selection == 6:
             break
-        elif selection not in range(1, 6):
+        elif selection not in range(1, 7):
             print("Invalid option. Try again!")
             continue
         execute_selection(selection, iris_native)
