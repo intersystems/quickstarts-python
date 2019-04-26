@@ -8,7 +8,11 @@ Note that our code and supporting wheel files are designed for Python 3 because 
 * `nativeplaystocksTask5.py`: to see how to access directly the underlying structure within InterSystems IRIS
 
 ## Configuration files
-`connections.config`: contains connection details for PyODBC, and Native API.
+`connections.config`: contains connection details for PyODBC and Native API.
+
+## Installation wheels
+* `nativeAPI_wheel`: contains installation wheel for using Python with Native API.
+*  `pyodbc_wheel`: contains installation wheel for using Python with PyODBC.
 
 ## How to run
 
