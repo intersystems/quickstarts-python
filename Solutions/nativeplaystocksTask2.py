@@ -1,10 +1,10 @@
 """
-PURPOSE: Store stock data directly to InterSystems IRIS Data Platform using a custom structure.
+PURPOSE: Store test data directly to InterSystems IRIS Data Platform.
 
-NOTES: When running, choose option 2 to store stock data natively.
+NOTES: When running, choose option 1 to store and retrieve test data.
+The test global should be 8888.
 """
 
-from time import time
 import irisnative
 
 
@@ -15,40 +15,12 @@ def set_test_global(iris_native):
     print("The value of ^testglobal(1) is {}".format(global_value))
 
 
-# Store stock data directly into InterSystems IRIS
-def store_stock_data(iris_native):
-    # Clear global from previous runs
-    iris_native.kill("^nyse")
-    print("Storing stock data using Native API...")
-
-    # Get stock data from file
-    list_stock = []
-    with open("all_stocks.csv") as f:
-        lines = f.readlines()
-
-        # Add stock data to list
-        for line in lines:
-            list_stock.append(line.rstrip("\n"))
-
-    # Get current time
-    start = int(time() * 1000)
-
-    # Loop through list of stock and write global
-    for i in range(1, len(list_stock)):
-        iris_native.set(list_stock[i], "^nyse", i)
-
-    # Get time consuming
-    end = int(time() * 1000)
-    time_consume = end - start
-    print("Stored natively successfully. Execution time: {} ms".format(time_consume))
-
-
 # Execute task based on user input
 def execute_selection(selection, iris_native):
     if selection == 1:
         set_test_global(iris_native)
     elif selection == 2:
-        store_stock_data(iris_native)
+        print("TO DO: Store stock data")
     elif selection == 3:
         print("TO DO: View stock data")
     elif selection == 4:
@@ -87,7 +59,8 @@ def run():
 
     # Create connection to InterSystems IRIS
     connection = irisnative.createConnection(ip, port, namespace, username, password)
-    print("Connect to InterSystems IRIS")
+
+    print("Connected to InterSystems IRIS")
 
     # Create IRIS Native object
     iris_native = irisnative.createIris(connection)

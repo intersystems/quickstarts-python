@@ -5,7 +5,7 @@ Note that our code and supporting wheel files are designed for Python 3 because 
 
 ## Contents
 * `pyodbcplaystocksTask7.py`: to see how to store and retrieve data relationally
-* `nativeplaystocksTask5.py`: to see how to access directly the underlying structure within InterSystems IRIS
+* `nativeplaystocksTask6.py`: to see how to access directly the underlying structure within InterSystems IRIS
 
 ## Configuration files
 `connection.config`: contains connection details for PyODBC and Native API.
@@ -35,68 +35,29 @@ Although port and username are most likely the defaults, you should verify those
 If you having trouble installing PyODBC, please see [how to install PyODBC](pyodbc_install.md)
 
 Before installing InterSystems driver, navigate to the **Solutions** directory of your terminal: `cd Solutions` 
-
-<table id="t03" class="section-qs">
-<tbody>
-<tr>
-<th>Local instance</th>
-<td>InterSystems IRIS PyODBC driver is installed. You can skip this step.</td>
-</tr>
-<tr>
-<th>Windows  
-</th>
-<td>`pyodbc_wheel\ODBC-2018.1.1.635.0-win_x64.exe`  
-</td>
-<tr>
-<th>Mac OS, Linux
- </th>
- <td>
- `odbcinst –i –d –f pyodbc_wheel/odbcinst.ini`
- </td>
-</table>
+    
+| Operating System | Command |
+| -- | :--: |  
+| Local instance | InterSystems IRIS PyODBC driver is installed. You can skip this step. |
+| Windows | `pyodbc_wheel\ODBC-2018.1.1.635.0-win_x64.exe` |
+| Mac, Linux | `odbcinst –i –d –f pyodbc_wheel/odbcinst.ini` |    
 
 ## Connect to InterSystems via the Native API
 
 Before installing, make sure you are in **Solutions** directory of your terminal.
 
-<table id="t02" class="section-qs">
-<tbody>
-<tr>
-<th>Windows  
-</th>
-<td>`pip install nativeAPI_wheel\irisnative-1.0.0-cp36-cp36m-win_amd64.whl`  
-</td>
-</tr>
-<tr>
-<th>Mac OS</th>
-<td>`pip install nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-macosx_10_13_x86_64.macosx_10_14_x86_64.whl`  
-</td>
-</tr>
-<tr>
-<th>Linux
-</th>
-<td>`pip install nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl`  
-</td>
-</tr>
-</tbody>
-</table>
+| Operating System | Command |
+| -- | :--: |  
+| Window | `pip install nativeAPI_wheel\irisnative-1.0.0-cp36-cp36m-win_amd64.whl` |
+| Mac | `pip install nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-macosx_10_13_x86_64.macosx_10_14_x86_64.whl`  |
+| Linux | `pip install nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl` |
 
 
 ## Having trouble installing InterSystems wheel for PyODBC and Native API?
 
 The installation process might have this following error: `"... is not a supported wheel on this platform"`. If so, please see the potential solution below.
 
-<table id="t04" class="section-qs">
-<tbody>
-<tr>
-<th>Windows  
-</th>
-<td>Solution: Rename wheel file to match your Python version.  
-Example: If you are using Python 3.7, rename `irisnative-1.0.0-cp36-cp36m-win_amd64.whl` to `irisnative-1.0.0-cp37-cp37m-win_amd64.whl`</td>
-</tr>
-<tr>
-<th>Mac OS</th>
-<td>Solution: Rename wheel file to match your Mac version.  
-Example: If you are using Mac version 10.12, rename `irisnative-1.0.0-cp34-abi3-macosx_10_13_x86_64.macosx_10_14_x86_64.whl` to `irisnative-1.0.0-cp34-abi3-macosx_10_12_x86_64.macosx_10_14_x86_64.whl`</td>
-</tr>
-</tbody>
+| Operating System | Solution |
+| -- | :--: |  
+| Windows | Rename wheel file to match your Python version. If you are using Python 3.7, rename `irisnative-1.0.0-cp36-cp36m-win_amd64.whl` to `irisnative-1.0.0-cp37-cp37m-win_amd64.whl` |
+| Mac | Rename wheel file to match your Mac version. If you are using Mac version 10.12, rename `irisnative-1.0.0-cp34-abi3-macosx_10_13_x86_64.macosx_10_14_x86_64.whl` to `irisnative-1.0.0-cp34-abi3-macosx_10_12_x86_64.macosx_10_14_x86_64.whl` |

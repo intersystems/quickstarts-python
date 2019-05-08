@@ -1,5 +1,5 @@
 """
-PURPOSE: Makes a connection to an instance of InterSystems IRIS Data Platform
+PURPOSE: Makes a connection to an instance of InterSystems IRIS Data Platform using PyODBC
 """
 
 

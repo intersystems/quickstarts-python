@@ -1,9 +1,7 @@
 """
 PURPOSE: Store stock data directly to InterSystems IRIS Data Platform using a custom structure.
 
-NOTES: When running,
-1. Choose option 2 to store stock data natively.
-2. Choose option 3 to retrieve stock data natively.
+NOTES: When running, choose option 2 to store stock data natively.
 """
 
 from time import time
@@ -45,17 +43,6 @@ def store_stock_data(iris_native):
     print("Stored natively successfully. Execution time: {} ms".format(time_consume))
 
 
-# Iterate over all nodes forwards and print
-def print_nodes(iris_native):
-    # Create iter
-    subscript_iter = iris_native.iterator("^nyse")
-    print("walk forwards")
-
-    # Iterate over all nodes forwards
-    for subscript, value in subscript_iter:
-        print("subscript = {}, value = {}".format(subscript, value))
-
-
 # Execute task based on user input
 def execute_selection(selection, iris_native):
     if selection == 1:
@@ -63,11 +50,11 @@ def execute_selection(selection, iris_native):
     elif selection == 2:
         store_stock_data(iris_native)
     elif selection == 3:
-        print_nodes(iris_native)
+        print("TO DO: View stock data")
     elif selection == 4:
         print("TO DO: Generate trades")
     elif selection == 5:
-        print("TO DO: Call routines")
+        print("TO DO: Call Routines")
 
 
 # Get connection details from config file
@@ -100,7 +87,6 @@ def run():
 
     # Create connection to InterSystems IRIS
     connection = irisnative.createConnection(ip, port, namespace, username, password)
-
     print("Connect to InterSystems IRIS")
 
     # Create IRIS Native object
@@ -112,7 +98,7 @@ def run():
         print("2. Store stock data")
         print("3. View stock data")
         print("4. Generate Trades")
-        print("5. Cal routines")
+        print("5. Call routines")
         print("6. Quit")
         selection = int(input("What would you like to do? "))
         if selection == 6:
