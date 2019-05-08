@@ -39,7 +39,7 @@ def run():
     connection_string = 'DRIVER={};SERVER={};PORT={};DATABASE={};UID={};PWD={}' \
         .format(driver, ip, port, namespace, username, password)
     connection = pyodbc.connect(connection_string)
-    print("Connected to InterSystem IRIS")
+    print("Connected to InterSystems IRIS")
 
 
 if __name__ == '__main__':

@@ -101,7 +101,7 @@ def run():
     # Create connection to InterSystems IRIS
     connection = irisnative.createConnection(ip, port, namespace, username, password)
 
-    print("Connect to InterSystem IRIS")
+    print("Connect to InterSystems IRIS")
 
     # Create IRIS Native object
     iris_native = irisnative.createIris(connection)

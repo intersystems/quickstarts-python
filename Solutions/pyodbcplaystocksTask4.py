@@ -127,7 +127,7 @@ def run():
         .format(driver, ip, port, namespace, username, password)
 
     connection = pyodbc.connect(connection_string)
-    print("Connected to InterSystem IRIS")
+    print("Connected to InterSystems IRIS")
 
     # Starting interactive prompt
     while True:
