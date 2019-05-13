@@ -2,6 +2,14 @@
 This code shows PyODBC, and the Native API access. It is required for the Python quickstart which can be found here: https://learning.intersystems.com/course/view.php?name=Python%20QS   
 Note that our code and supporting wheel files are designed for Python 3 because Python 2 will retire in 2020. If you want to use Python 2, please contact us for more details.
 
+## Supported platforms
+
+| Operating System | Version |
+| -- | :-----: |  
+| Windows | Windows 10, Windows Server 2012, 2016, 2019 |
+| Mac | Apple macOS 10.13, 10.14 |
+| Linux | <ul><li>Oracle Linux 7</li><li>Red Hat Enterprise Linux 7</li><li>SUSE Linux Enterprise Server 12</li><li>Ubuntu 18.04</li><li>Ubuntu 18.04</li><li>CentOS-7</li></ul> |
+
 
 ## Contents
 * `pyodbcplaystocksTask7.py`: to see how to store and retrieve data relationally
@@ -24,7 +32,7 @@ If you are using AWS, Azure, or GCP, that you have followed the steps to [chang
     
     If you are using InterSystems Labs, the sample stock data is already loaded. You can skip to the next step.
 3. Clone the repo and open it in your IDE. Notes that all codes and supported materials are in **Solutions** folder
-4. In `connections.config` file, modify the host and password to be the correct values for your InterSystems IRIS instance. 
+4. In `connection.config` file, modify the host and password to be the correct values for your InterSystems IRIS instance. 
 Although port and username are most likely the defaults, you should verify those values are corrects.
 
 ## Connect to InterSystems via PyODBC
@@ -48,16 +56,11 @@ Before installing, make sure you are in **Solutions** directory of your terminal
 
 | Operating System | Command |
 | -- | :--: |  
-| Window | `pip install nativeAPI_wheel\irisnative-1.0.0-cp36-cp36m-win_amd64.whl` |
+| Window | `pip install nativeAPI_wheel\irisnative-1.0.0-cp34.cp35.cp36.cp37-none-win_amd64.whl` |
 | Mac | `pip install nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-macosx_10_13_x86_64.macosx_10_14_x86_64.whl`  |
 | Linux | `pip install nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl` |
 
+## Run sample Python code to connect with InterSystems IRIS database
 
-## Having trouble installing InterSystems wheel for PyODBC and Native API?
-
-The installation process might have this following error: `"... is not a supported wheel on this platform"`. If so, please see the potential solution below.
-
-| Operating System | Solution |
-| -- | :--: |  
-| Windows | Rename wheel file to match your Python version. If you are using Python 3.7, rename `irisnative-1.0.0-cp36-cp36m-win_amd64.whl` to `irisnative-1.0.0-cp37-cp37m-win_amd64.whl` |
-| Mac | Rename wheel file to match your Mac version. If you are using Mac version 10.12, rename `irisnative-1.0.0-cp34-abi3-macosx_10_13_x86_64.macosx_10_14_x86_64.whl` to `irisnative-1.0.0-cp34-abi3-macosx_10_12_x86_64.macosx_10_14_x86_64.whl` |
+1. Run `python pyodbcplaystocksTask1.py` to make a connection to an instance of InterSystems IRIS Data Platform using the PyODBC.
+2. Run `python nativeplaystocksTask1.py` to make a connection to an instance of InterSystems IRIS Data Platform using the Native API.
