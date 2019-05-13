@@ -1,5 +1,6 @@
 # quickstarts-python
-This code shows PyODBC, and the Native API access. It is required for the Python quickstart which can be found here: https://learning.intersystems.com/course/view.php?name=Python%20QS   
+This code shows PyODBC, and the Native API access. It is required for the Python quickstart which can be found here: 
+[https://learning.intersystems.com/course/view.php?name=Python%20QS](https://learning.intersystems.com/course/view.php?name=Python%20QS)   
 Note that our code and supporting wheel files are designed for Python 3 because Python 2 will retire in 2020. If you want to use Python 2, please contact us for more details.
 
 ## Supported platforms
@@ -8,7 +9,7 @@ Note that our code and supporting wheel files are designed for Python 3 because 
 | -- | :-----: |  
 | Windows | Windows 10, Windows Server 2012, 2016, 2019 |
 | Mac | Apple macOS 10.13, 10.14 |
-| Linux | <ul><li>Oracle Linux 7</li><li>Red Hat Enterprise Linux 7</li><li>SUSE Linux Enterprise Server 12</li><li>Ubuntu 18.04</li><li>Ubuntu 18.04</li><li>CentOS-7</li></ul> |
+| Linux | <ul><li>Oracle Linux 7</li><li>Red Hat Enterprise Linux 7</li><li>SUSE Linux Enterprise Server 12</li><li>Ubuntu 18.04</li><li>CentOS-7</li></ul> |
 
 
 ## Contents
