@@ -50,7 +50,7 @@ def store_stock_data(iris_native):
 
 # Iterate over all nodes forwards and print
 def print_nodes(iris_native):
-    # Create iter
+    # Create an ITER object
     subscript_iter = iris_native.iterator("^nyse")
     print("walk forwards")
 
@@ -119,9 +119,9 @@ def run():
     # Create connection to InterSystems IRIS
     connection = irisnative.createConnection(ip, port, namespace, username, password)
 
-    print("Connect to InterSystems IRIS")
+    print("Connected to InterSystems IRIS")
 
-    # Create IRIS Native object
+    # Create an IRIS object
     iris_native = irisnative.createIris(connection)
 
     # Starting interactive prompt
