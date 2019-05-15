@@ -38,7 +38,7 @@ def run():
 
     print("Connected to InterSystems IRIS")
 
-    # Create an IRIS object
+    # Create an iris object
     iris_native = irisnative.createIris(connection)
 
 

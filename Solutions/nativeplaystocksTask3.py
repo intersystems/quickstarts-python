@@ -89,7 +89,7 @@ def run():
     connection = irisnative.createConnection(ip, port, namespace, username, password)
     print("Connected to InterSystems IRIS")
 
-    # Create an IRIS object
+    # Create an iris object
     iris_native = irisnative.createIris(connection)
 
     # Starting interactive prompt
