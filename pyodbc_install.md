@@ -1,4 +1,4 @@
-## Install pyodbc for Window
+## Install pyodbc for Windows
 
 1. Run `pip install pyodbc`
 
