@@ -171,7 +171,7 @@ def run():
     # Create connection to InterSystems IRIS
     connection_string = 'DRIVER={};SERVER={};PORT={};DATABASE={};UID={};PWD={}' \
         .format(driver, ip, port, namespace, username, password)
-    onnection = pyodbc.connect(connection_string)
+    connection = pyodbc.connect(connection_string)
     connection.setdecoding(pyodbc.SQL_CHAR, encoding='utf-8')
     connection.setencoding(encoding='utf-8')
     print("Connected to InterSystems IRIS")
