@@ -43,11 +43,10 @@ def create_portfolio_table(connection):
 def add_portfolio_item(connection, name, purchase_date, price, shares):
     try:
         sql = "INSERT INTO Demo.Portfolio (name,PurchaseDate,PurchasePrice,Shares,DateTimeUpdated) VALUES (?,?,?,?,?)"
-        stock_name = name.encode('utf-8')
         cursor = connection.cursor()
         purchase_date = datetime.strptime(purchase_date, "%Y-%m-%d")
         current_time = datetime.now()
-        cursor.execute(sql, stock_name, purchase_date, float(price), float(shares), current_time)
+        cursor.execute(sql, name, purchase_date, float(price), float(shares), current_time)
         print("Added new line item for stock: {}.".format(name))
         connection.commit()
     except Exception as e:
@@ -58,10 +57,9 @@ def add_portfolio_item(connection, name, purchase_date, price, shares):
 def update_portfolio_item(connection, name, purchase_date, price, shares):
     sql = "UPDATE Demo.Portfolio SET purchaseDate = ?, purchasePrice= ?, shares = ?, DateTimeUpdated= ? WHERE name= ?"
     cursor = connection.cursor()
-    stock_name = name.encode('utf-8')
     purchase_date = datetime.strptime(purchase_date, "%Y-%m-%d")
     current_time = datetime.now()
-    cursor.execute(sql, purchase_date, float(price), float(shares), current_time, stock_name)
+    cursor.execute(sql, purchase_date, float(price), float(shares), current_time, name)
     if cursor.rowcount > 0:
         print("Updated {} successfully.".format(name))
     else:
@@ -87,7 +85,7 @@ def task_create_portfolio(connection):
 def task_add_to_portfolio(connection):
     print("Add to portfolio")
     name = input("Name: ")
-    date = input("Date: ")
+    date = input("Date (YYYY-MM-DD): ")
     price = input("Price: ")
     shares = input("Number of shares: ")
     add_portfolio_item(connection, name, date, price, shares)
@@ -97,7 +95,7 @@ def task_add_to_portfolio(connection):
 def task_update_portfolio(connection):
     print("Update portfolio")
     name = input("Which stock you are going to update: ")
-    date = input("New Date: ")
+    date = input("New Date (YYYY-MM-DD): ")
     price = input("New Price: ")
     shares = input("New Number of shares: ")
     update_portfolio_item(connection, name, date, price, shares)
