@@ -23,7 +23,7 @@ def find_top_on_date(connection, date):
     for row in rows:
         for item in row:
             print("{}\t".format(item), end='')
-        print
+        print("")
 
 
 # Create portfolio table
