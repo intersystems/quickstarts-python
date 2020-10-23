@@ -85,7 +85,7 @@ def view_portfolio_table(connection, trans_date):
           "FROM Demo.Portfolio as pf JOIN Demo.Stock as st on st.name = pf.name WHERE st.Transdate = ?"
     cursor = connection.cursor()
     rows = cursor.execute(sql, datetime.strptime(trans_date, "%Y-%m-%d"))
-    print("Name\tPurchase Date\tPurchase Price\tStock Close\tShares\tDatetime Updated\t\t% Change\tGain or Loss")
+    print("Name\tPurchase Date\tPurchase Price\tStock Close\tShares\tDatetime Updated\t% Change\tGain or Loss")
     for row in rows:
         name = row[0]
         purchase_price = row[1]
@@ -93,11 +93,11 @@ def view_portfolio_table(connection, trans_date):
         stock_close = row[3]
         shares = row[4]
         current_time = row[5]
-        percent_change = (stock_close - purchase_price) / purchase_price * 100
+        percent_change = round((stock_close - purchase_price) / purchase_price * 100, 2)
         start_value = purchase_price * shares
         end_value = stock_close * shares
         gain_or_loss = round(end_value - start_value, 2)
-        print("{}\t{}\t{}\t\t{}\t{}\t{}\t{}\t{}"
+        print("{}\t{}\t{}\t\t{}\t{}\t{}\t{}\\t{}"
               .format(name, purchase_date, purchase_price, stock_close,
                       shares, current_time, percent_change, gain_or_loss))
 
