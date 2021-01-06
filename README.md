@@ -60,7 +60,7 @@ Before installing, make sure you are in **Solutions** directory of your terminal
 
 | Operating System | Command |
 | -- | :--: |  
-| Window | `pip install nativeAPI_wheel\irisnative-1.0.0-cp34.cp35.cp36.cp37-none-win_amd64.whl` |
+| Window | `pip install nativeAPI_wheel\irisnative-1.0.0-cp34.cp35.cp36.cp37.cp38.cp39-none-win_amd64.whl` |
 | Mac | `pip install nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-macosx_10_13_x86_64.macosx_10_14_x86_64.whl`  |
 | Linux | `pip install nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl` |
 
