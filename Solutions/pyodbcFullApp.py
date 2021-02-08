@@ -97,7 +97,7 @@ def view_portfolio_table(connection, trans_date):
         start_value = purchase_price * shares
         end_value = stock_close * shares
         gain_or_loss = round(end_value - start_value, 2)
-        print("{}\t{}\t{}\t\t{}\t{}\t{}\t{}\\t{}"
+        print("{}\t{}\t{}\t\t{}\t{}\t{}\t{}\t\t{}"
               .format(name, purchase_date, purchase_price, stock_close,
                       shares, current_time, percent_change, gain_or_loss))
 
