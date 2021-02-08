@@ -203,7 +203,7 @@ def run():
     connection = pyodbc.connect(connection_string)
     connection.setdecoding(pyodbc.SQL_CHAR, encoding='utf-8')
     connection.setencoding(encoding='utf-8')
-    print("Connected to InterSystems IRIS")
+    print("Connected to InterSystems IRIS via PyODBC")
 
     # Starting interactive prompt
     while True:
