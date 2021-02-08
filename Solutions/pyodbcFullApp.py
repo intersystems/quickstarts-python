@@ -147,7 +147,7 @@ def task_delete_portfolio(connection):
 # Note: Choose option 3 to add 2 or 3 stocks to your portfolio (using names from top 10 and 2016-08-12 as date);
 # then choose option 6 using date 2017-08-10 to view your % Gain or Loss after a year.
 def task_view_porfolio(connection):
-    print("View portfolio")
+    print("View profit to date")
     trans_date = input("Selling on which date? (YYYY-MM-DD) ")
     view_portfolio_table(connection, trans_date)
 
