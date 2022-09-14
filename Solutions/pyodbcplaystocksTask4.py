@@ -119,7 +119,7 @@ def run():
     namespace = connection_detail["namespace"]
     username = connection_detail["username"]
     password = connection_detail["password"]
-    driver = "{InterSystems ODBC}"
+    driver = "{InterSystems IRIS ODBC35}"
 
     # Create connection to InterSystems IRIS
     connection_string = 'DRIVER={};SERVER={};PORT={};DATABASE={};UID={};PWD={}'\
