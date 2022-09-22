@@ -50,7 +50,7 @@ Before installing InterSystems driver, navigate to the **Solutions** directory o
 | Local instance | InterSystems IRIS PyODBC driver is installed. You can skip this step. |
 | Windows | `pyodbc_wheel\ODBC-2022.1.0.209.0-win_x64.exe` |
 | Mac | `odbcinst -i -d -f pyodbc_wheel/mac/odbcinst.ini` |
-| Linux | `odbcinst -i -d -f pyodbc_wheel/linux/odbcinst.ini` |
+| Linux | `sudo odbcinst -i -d -f pyodbc_wheel/linux/odbcinst.ini` |
 
 **Note**: Due to the dash(`-`) being different in each operating system, you might need to retype the command if you encounter errors.
 
