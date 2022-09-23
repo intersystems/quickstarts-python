@@ -1,7 +1,7 @@
 # quickstarts-python
 This code shows PyODBC, and the Native API access. It is required for the Python quickstart which can be found here: 
 [https://learning.intersystems.com/course/view.php?name=Python%20QS](https://learning.intersystems.com/course/view.php?name=Python%20QS)   
-Note that our code and supporting wheel files are designed for Python 3 because Python 2 will retire in 2020. If you want to use Python 2, please contact us for more details.
+Note that our code and supporting wheel files are designed for Python 3. If you want to use Python 2, please contact us for more details.
 
 ## Supported platforms
 
@@ -20,8 +20,8 @@ Note that our code and supporting wheel files are designed for Python 3 because 
 `connection.config`: contains connection details for PyODBC and Native API.
 
 ## Installation wheels
-* `nativeAPI_wheel`: contains installation wheel for using Python with Native API.
-*  `pyodbc_wheel`: contains installation wheel for using Python with PyODBC.
+* `nativeAPI_wheel`: contains installation wheels for using Python with Native API.
+*  `pyodbc_wheel`: contains installation wheels for using Python with PyODBC.
 
 ## How to run
 
