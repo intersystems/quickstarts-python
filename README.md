@@ -13,20 +13,23 @@ Note that our code and supporting wheel files are designed for Python 3. If you 
 
 
 ## Contents
+### Python files 
+* `pyodbcplaystocksTask1.py` to make a connection to an instance of InterSystems IRIS Data Platform using  PyODBC
 * `pyodbcplaystocksTask7.py`: to see how to store and retrieve data relationally
+* `nativeplaystocksTask1.py` to make a connection to an instance of InterSystems IRIS Data Platform using the Native API
 * `nativeplaystocksTask6.py`: to see how to access directly the underlying structure within InterSystems IRIS
 
-## Configuration files
-`connection.config`: contains connection details for PyODBC and Native API.
+### Configuration files
+* `connection.config`: contains connection details for PyODBC and Native API.
 
-## Installation wheels
+### Installation wheels
 * `nativeAPI_wheel`: contains installation wheels for using Python with Native API.
 *  `pyodbc_wheel`: contains installation wheels for using Python with PyODBC.
 
 ## How to run
 
 1.  Verify you have an [<span class="urlformat">instance of InterSystems IRIS</span>](https://learning.intersystems.com/course/view.php?name=Get%20InterSystems%20IRIS), 
-and an IDE that supports Python (such as **PyCharm**). 
+and an IDE that supports Python (such as **PyCharm**). To download Community Edition locally, get an InterSystems IRIS installation kit from the [<span class="urlformat">Developer Download page</span>](https://download.intersystems.com/download/download.csp).
 If you are using AWS, Azure, or GCP, that you have followed the steps to [change the password for InterSystems IRIS](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ACLOUD#ACLOUD_interact).
 2.  If you are using AWS, GCP, or Microsoft Azure, load the sample stock data into InterSystems IRIS:  
     `$ iris load http://github.com/intersystems/Samples-Stock-Data`  
