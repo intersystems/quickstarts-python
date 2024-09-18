@@ -1,7 +1,6 @@
 # quickstarts-python
-This code shows PyODBC, and the Native API access. It is required for the Python quickstart which can be found here: 
-[https://learning.intersystems.com/course/view.php?name=Python%20QS](https://learning.intersystems.com/course/view.php?name=Python%20QS)   
-Note that our code and supporting wheel files are designed for Python 3. If you want to use Python 2, please contact us for more details.
+This code shows how to connect a Python application with an InterSystems server using the Native API. It is used in the online exercise [<span class="urlformat">Python quickstart</span>](https://learning.intersystems.com/course/view.php?name=Python%20QS).
+Note that our code and supporting wheel files are designed for Python 3. If you want to use Python 2, please contact [<span class="urlformat">online.training@intersystems.com</span>](online.training@intersystems.com) for more details.
 
 ## Supported platforms
 
@@ -14,60 +13,35 @@ Note that our code and supporting wheel files are designed for Python 3. If you 
 
 ## Contents
 ### Python files 
-* `pyodbcplaystocksTask1.py` to make a connection to an instance of InterSystems IRIS Data Platform using  PyODBC
-* `pyodbcplaystocksTask7.py`: to see how to store and retrieve data relationally
-* `nativeplaystocksTask1.py` to make a connection to an instance of InterSystems IRIS Data Platform using the Native API
+* `nativeplaystocksTask1.py`: to make a connection to an instance of InterSystems IRIS Data Platform using the Native API
 * `nativeplaystocksTask6.py`: to see how to access directly the underlying structure within InterSystems IRIS
 
 ### Configuration files
-* `connection.config`: contains connection details for PyODBC and Native API.
-
-### Installation wheels
-* `nativeAPI_wheel`: contains installation wheels for using Python with Native API.
-*  `pyodbc_wheel`: contains installation wheels for using Python with PyODBC.
+* `connection.config`: contains connection details for Native API, including `ip`, `port`, `namespace`, `username`, and `password`.
 
 ## How to run
 
-1.  Verify you have an [<span class="urlformat">instance of InterSystems IRIS</span>](https://learning.intersystems.com/course/view.php?name=Get%20InterSystems%20IRIS), 
-and an IDE that supports Python (such as **PyCharm**). To download Community Edition locally, get an InterSystems IRIS installation kit from the [<span class="urlformat">Developer Download page</span>](https://download.intersystems.com/download/download.csp).
-If you are using AWS, Azure, or GCP, that you have followed the steps to [change the password for InterSystems IRIS](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ACLOUD#ACLOUD_interact).
-2.  If you are using AWS, GCP, or Microsoft Azure, load the sample stock data into InterSystems IRIS:  
+1.  Verify you have an instance of InterSystems IRIS, and an IDE that supports Python (such as **VS Code**). To download Community Edition locally, get an InterSystems IRIS installation kit from the [<span class="urlformat">evaluation kit download page</span>](https://evaluation.intersystems.com/Eval/). To use InterSystems IRIS in a container, get an image from the [<span class="urlformat">InterSystems Container Registry</span>](https://containers.intersystems.com/contents). 
+2.  If you are using a local or container instance, load the sample stock data into InterSystems IRIS:  
     `$ iris load http://github.com/intersystems/Samples-Stock-Data`  
     
     If you are using InterSystems Labs, the sample stock data is already loaded. You can skip to the next step.
-3. Clone the repo and open it in your IDE. Notes that all codes and supported materials are in **Solutions** folder
+3. Clone the repo and open it in your IDE. Notes that all code and supported materials are in **Solutions** folder
 4. In `connection.config` file, modify the host and password to be the correct values for your InterSystems IRIS instance. 
-Although port and username are most likely the defaults, you should verify those values are corrects.
-
-## Connect to InterSystems via PyODBC
-
-**Note**: If you have InterSystems IRIS installed locally in your machine, you do not need to set up InterSystems PyODBC driver.
-
-**Prerequisite**: You should have [PyODBC](https://pypi.org/project/pyodbc/) already installed in your local machine.
-If you having trouble installing PyODBC, please see [how to install PyODBC](pyodbc_install.md)
-
-Before installing InterSystems driver, navigate to the **Solutions** directory of your terminal: `cd Solutions` 
-    
-| Operating System | Command |
-| -- | :--: |  
-| Local instance | InterSystems IRIS PyODBC driver is installed. You can skip this step. |
-| Windows | `pyodbc_wheel\ODBC-2022.1.0.209.0-win_x64.exe` |
-| Mac | `odbcinst -i -d -f pyodbc_wheel/mac/odbcinst.ini` |
-| Linux | `sudo odbcinst -i -d -f pyodbc_wheel/linux/odbcinst.ini` |
-
-**Note**: Due to the dash(`-`) being different in each operating system, you might need to retype the command if you encounter errors.
+Although port and username are most likely the defaults, you should verify those values are correct. The port value should be the superserver port. 
 
 ## Connect to InterSystems via the Native API
 
-Before installing, make sure you are in **Solutions** directory of your terminal.
+To connect using the Native API, you will need the DB-API driver. If InterSystems IRIS is installed locally or in a container on your development system, you can find the file in `install-dir\dev\python`, where `install-dir` is the InterSystems IRIS installation directory (`install-dir` in a container is `/usr/irissys`). You can also download the driver from the InterSystems IRIS [<span class="urlformat">driver distribution page</span>](https://intersystems-community.github.io/iris-driver-distribution/). Put this driver in the **Solutions** directory. 
 
-| Operating System | Command |
-| -- | :--: |  
-| Window | `pip install nativeAPI_wheel\irisnative-1.0.0-cp34.cp35.cp36.cp37.cp38.cp39-none-win_amd64.whl` |
-| Mac | `pip install nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-macosx_10_13_x86_64.macosx_10_14_x86_64.whl`  |
-| Linux | `pip install nativeAPI_wheel/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl` |
+Before installing the driver, make sure you are in **Solutions** directory of your terminal: `cd Solutions` 
+
+Install the driver using `pip`:
+
+`pip install intersystems_irispython-3.2.0-py3-none-any.whl` 
 
 ## Run sample Python code to connect with InterSystems IRIS database
 
-1. Run `python pyodbcplaystocksTask1.py` to make a connection to an instance of InterSystems IRIS Data Platform using the PyODBC.
-2. Run `python nativeplaystocksTask1.py` to make a connection to an instance of InterSystems IRIS Data Platform using the Native API.
+1. Run `python nativeplaystocksTask1.py` to make a connection to an instance of InterSystems IRIS Data Platform using the Native API.
+2. Run `python nativeplaystocksTask6.py` to store and view data using globals, the underlying structure within InterSystems IRIS.
+
